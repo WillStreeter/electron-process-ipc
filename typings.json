@@ -1,0 +1,21 @@
+{
+  "globalDependencies": {
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
+    "electron/github-electron": "registry:dt/electron/github-electron#1.4.3+20161013090743",
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160711183608",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "mocha": "registry:dt/mocha#2.2.5+20160619032855",
+    "node": "registry:dt/node#6.0.0+20160709114037",
+    "object-hash": "registry:dt/object-hash#0.5.0+20160317120654",
+    "seneca": "registry:dt/seneca#2.1.0+20160619034151",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
+    "superagent": "registry:dt/superagent#1.4.0+20160317120654",
+    "supertest-as-promised": "registry:dt/supertest-as-promised#2.0.2+20160317120654"
+  },
+  "dependencies": {
+    "bluebird": "registry:npm/bluebird#3.3.4+20160622205516",
+    "lodash": "registry:npm/lodash#4.0.0+20161015015725",
+    "node-uuid": "registry:npm/node-uuid#1.4.7+20160723033700"
+  }
+}
