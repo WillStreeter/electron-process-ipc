@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.ts"],"names":[],"mappings":";AAGA;IAEE;IAEA,CAAC;IAKH,yBAAC;AAAD,CATA,AASC,IAAA;AATD;uCASC,CAAA","file":"index.js","sourcesContent":["\n\n\nexport default class ElectronProcessIPC {\n\n  constructor(){\n\n  }\n\n\n\n\n}"],"sourceRoot":"src"}
