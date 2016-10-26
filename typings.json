@@ -11,7 +11,8 @@
     "seneca": "registry:dt/seneca#2.1.0+20160619034151",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "superagent": "registry:dt/superagent#1.4.0+20160317120654",
-    "supertest-as-promised": "registry:dt/supertest-as-promised#2.0.2+20160317120654"
+    "supertest-as-promised": "registry:dt/supertest-as-promised#2.0.2+20160317120654",
+    "uuid": "registry:dt/uuid#3.3.0+20160728152600"
   },
   "dependencies": {
     "bluebird": "registry:npm/bluebird#3.3.4+20160622205516",

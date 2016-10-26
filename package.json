@@ -28,6 +28,7 @@
     "gulp-typescript": "^2.13.6",
     "merge2": "^1.0.2",
     "mocha": "^2.5.3",
+    "retyped-uuid-tsd-ambient": "^1.0.0-0",
     "supertest": "^1.2.0",
     "supertest-as-promised": "^3.2.0",
     "typescript": "^1.8.10"
