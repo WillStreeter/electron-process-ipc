@@ -1,17 +1,18 @@
-
-
+import { MainProcess } from './MainProcess';
+import { BackGroundProcess } from './BackGroundProcess';
+import { ForegroundProcess } from './ForegroundProcess';
 
 export default class ElectronProcessIPC {
 
-  public background:any;
-  public foreground:any;
-  public main:any;
+  public background:BackGroundProcess;
+  public foreground:ForegroundProcess;
+  public main:MainProcess;
 
-  constructor(public background:){
-
-  }
-
-
+      constructor(){
+         this.main = new MainProcess();
+         this.background = new BackGroundProcess();
+         this.foreground = new ForegroundProcess();
+      }
 
 
 }

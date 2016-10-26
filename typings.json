@@ -1,7 +1,7 @@
 {
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160601211834",
-    "electron/github-electron": "registry:dt/electron/github-electron#1.4.3+20161013090743",
+    "github-electron": "registry:dt/github-electron#0.37.6+20160417155838",
     "express": "registry:dt/express#4.0.0+20160708185218",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160711183608",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
@@ -11,8 +11,7 @@
     "seneca": "registry:dt/seneca#2.1.0+20160619034151",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "superagent": "registry:dt/superagent#1.4.0+20160317120654",
-    "supertest-as-promised": "registry:dt/supertest-as-promised#2.0.2+20160317120654",
-    "uuid": "registry:dt/uuid#3.3.0+20160728152600"
+    "supertest-as-promised": "registry:dt/supertest-as-promised#2.0.2+20160317120654"
   },
   "dependencies": {
     "bluebird": "registry:npm/bluebird#3.3.4+20160622205516",

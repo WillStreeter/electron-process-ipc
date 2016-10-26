@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"BackGroundProcess.js","sourcesContent":[],"sourceRoot":"src"}
+{"version":3,"sources":["BackGroundProcess.ts"],"names":[],"mappings":";AAOA;IAES;IAAc,CAAC;IAGxB,wBAAC;AAAD,CALA,AAKC,IAAA;AALa,yBAAiB,oBAK9B,CAAA","file":"BackGroundProcess.js","sourcesContent":["import * as _ from \"lodash\";\nimport { ipcRenderer } from \"electron\";\nimport  objectHash = require(\"object-hash\");\n\n\n\n\nexport class  BackGroundProcess {\n\n         constructor(){}\n\n\n}"],"sourceRoot":"src"}

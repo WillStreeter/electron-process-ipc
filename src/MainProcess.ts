@@ -3,7 +3,7 @@ import {BrowserWindow, ipcMain} from "electron";
 
 
 
-export class MediaProcess{
+export class MainProcess{
 
     public foregroundWindows:any = [];
 

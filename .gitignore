@@ -1,10 +1,6 @@
 
 # Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+.idea
 
 
 ### Node ###
@@ -40,6 +36,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+typings
 
 # Optional npm cache directory
 .npm
