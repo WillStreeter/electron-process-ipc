@@ -1,21 +1,18 @@
 import * as _ from "lodash";
 import {BrowserWindow, ipcMain} from "electron";
 
-
+var foregroundWindows:any = [];
 
 export class MainProcess{
-
-    public foregroundWindows:any;
 
     public backgroundWindow:any;
 
     public backgroundProcessHandler:any;
 
     constructor(){
-        this.foregroundWindows = [];
         this.backgroundProcessHandler = {
             addWindow(browserWindow) {
-                this.foregroundWindows.push(browserWindow);
+                foregroundWindows.push(browserWindow);
             }
         }
     }
@@ -48,7 +45,7 @@ export class MainProcess{
     }
 
     private sendToAllForegroundWindows(eventName:string, payload:any) {
-        _.forEach(this.foregroundWindows, (foregroundWindow) => {
+        _.forEach(foregroundWindows, (foregroundWindow) => {
             foregroundWindow.webContents.send.apply(foregroundWindow.webContents, [eventName, payload]);
         });
     }
