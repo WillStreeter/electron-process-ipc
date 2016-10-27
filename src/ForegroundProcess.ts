@@ -15,13 +15,14 @@ export class ForegroundProcess{
     getModule(originalModule:any):any{
 
         const promiseWrappedModule:any = {};
-        const moduleHash = objectHash(originalModule);
+        const moduleHash:any  = objectHash(originalModule);
+        const _ref:any = this;
         _.forEach(originalModule, (func, funcName) => {
           if (_.isFunction(func)) {
             promiseWrappedModule[funcName] = function() {
               // Remove non-enumarable properties of arguments
-              const args = _.map(arguments, (element) => element);
-              return this.run(  moduleHash,
+              const args:any  = _.map(arguments, (element) => element);
+              return _ref.run(  moduleHash,
                            funcName,
                            args
                          );
@@ -50,7 +51,7 @@ export class ForegroundProcess{
           }
     }
 
-    private  callbackCallback(functionsById, event, data) {
+    callbackCallback(functionsById, event, data) {
       const {functionId, args} = data;
       if (functionsById[functionId]) {
         functionsById[functionId](...args);

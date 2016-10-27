@@ -10,11 +10,12 @@ var ForegroundProcess = (function () {
     ForegroundProcess.prototype.getModule = function (originalModule) {
         var promiseWrappedModule = {};
         var moduleHash = objectHash(originalModule);
+        var _ref = this;
         _.forEach(originalModule, function (func, funcName) {
             if (_.isFunction(func)) {
                 promiseWrappedModule[funcName] = function () {
                     var args = _.map(arguments, function (element) { return element; });
-                    return this.run(moduleHash, funcName, args);
+                    return _ref.run(moduleHash, funcName, args);
                 };
             }
         });
