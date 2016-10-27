@@ -12,13 +12,13 @@ var MainProcess = (function () {
     }
     MainProcess.prototype.createBackgroundProcess = function (url, debug) {
         var _this = this;
-        var backgroundWindow = new electron_1.BrowserWindow();
+        this.backgroundWindow = new electron_1.BrowserWindow();
         if (!debug) {
-            backgroundWindow.hide();
+            this.backgroundWindow.hide();
         }
-        backgroundWindow.loadURL(url);
+        this.backgroundWindow.loadURL(url);
         electron_1.ipcMain.on('BACKGROUND_START', function (event, result) {
-            backgroundWindow.webContents.send.apply(backgroundWindow.webContents, ['BACKGROUND_START', result]);
+            _this.backgroundWindow.webContents.send.apply(_this.backgroundWindow.webContents, ['BACKGROUND_START', result]);
         });
         electron_1.ipcMain.on('BACKGROUND_REPLY', function (event, result) {
             _this.sendToAllForegroundWindows('BACKGROUND_REPLY', result);

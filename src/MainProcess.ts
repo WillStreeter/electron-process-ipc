@@ -5,27 +5,32 @@ import {BrowserWindow, ipcMain} from "electron";
 
 export class MainProcess{
 
-    public foregroundWindows:any = [];
+    public foregroundWindows:any;
 
-    public backgroundProcessHandler:any = {
-        addWindow(browserWindow) {
-            this.foregroundWindows.push(browserWindow);
+    public backgroundWindow:any;
+
+    public backgroundProcessHandler:any;
+
+    constructor(){
+        this.foregroundWindows = [];
+        this.backgroundProcessHandler = {
+            addWindow(browserWindow) {
+                this.foregroundWindows.push(browserWindow);
+            }
         }
     }
 
-    constructor(){}
-
     createBackgroundProcess(url:string, debug:any) {
-        const backgroundWindow = new BrowserWindow();
+        this.backgroundWindow = new BrowserWindow();
 
         if (!debug) {
-            backgroundWindow.hide();
+            this.backgroundWindow.hide();
         }
 
-        backgroundWindow.loadURL(url);
+        this.backgroundWindow.loadURL(url);
 
         ipcMain.on('BACKGROUND_START', (event, result) => {
-            backgroundWindow.webContents.send.apply(backgroundWindow.webContents, ['BACKGROUND_START', result]);
+            this.backgroundWindow.webContents.send.apply(this.backgroundWindow.webContents, ['BACKGROUND_START', result]);
         });
 
 
