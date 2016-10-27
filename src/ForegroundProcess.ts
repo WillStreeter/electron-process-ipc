@@ -2,6 +2,8 @@ import * as _ from "lodash";
 import { ipcRenderer } from "electron";
 import * as uuid from 'node-uuid';
 import objectHash = require("object-hash");
+import Promise = require("bluebird");
+
 
 
 export class ForegroundProcess{

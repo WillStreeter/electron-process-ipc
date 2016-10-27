@@ -3,6 +3,7 @@ var _ = require("lodash");
 var electron_1 = require("electron");
 var uuid = require('node-uuid');
 var objectHash = require("object-hash");
+var Promise = require("bluebird");
 var ForegroundProcess = (function () {
     function ForegroundProcess() {
     }
