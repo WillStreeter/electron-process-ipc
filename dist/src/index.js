@@ -10,7 +10,6 @@ var ElectronProcessIPC = (function () {
     }
     return ElectronProcessIPC;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ElectronProcessIPC;
+exports.ElectronProcessIPC = ElectronProcessIPC;
 
 //# sourceMappingURL=index.js.map

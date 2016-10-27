@@ -2,7 +2,7 @@ import { MainProcess } from './MainProcess';
 import { BackGroundProcess } from './BackGroundProcess';
 import { ForegroundProcess } from './ForegroundProcess';
 
-export default class ElectronProcessIPC {
+export class ElectronProcessIPC {
 
   public background:BackGroundProcess;
   public foreground:ForegroundProcess;
