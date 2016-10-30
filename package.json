@@ -18,6 +18,12 @@
   ],
   "author": "will.streeter@gmail.com",
   "license": "MIT",
+  "peerDependencies": {
+    "bluebird": "^3.4.6",
+    "electron-prebuilt": "^0.36.4",
+    "lodash": "^4.16.4",
+    "object-hash": "^1.1.4"
+  },
   "devDependencies": {
     "@types/uuid": "^2.0.29",
     "chai": "^3.5.0",
