@@ -2,6 +2,8 @@
 {
   "compilerOptions": {
     "rootDir":"./",
+    "outDir": "./dist",
+    "allowJs": true,
     "target": "es5",
     "module": "commonjs",
     "sourceMap":true,
@@ -10,5 +12,8 @@
     "removeComments": true,
     "noLib": false,
     "experimentalDecorators":true
-  }
+  },
+    "include": [
+        "./src/**/*"
+    ]
 }
