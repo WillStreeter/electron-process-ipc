@@ -30,7 +30,7 @@ gulp.task('build:ts',()=> {
 
   return merge([
           tsResult.js.pipe(sourcemaps.write('.', {sourceRoot: './src'}))
-          .pipe(gulp.dest('./dist')),
+          .pipe(gulp.dest('./dist/src')),
           tsResult.dts.pipe(gulp.dest('./dist/typings'))
         ]);
 });
