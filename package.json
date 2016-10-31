@@ -19,6 +19,10 @@
   "author": "will.streeter@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "@types/bluebird": "^3.0.35",
+    "@types/lodash": "^4.14.37",
+    "@types/node-uuid": "0.0.28",
+    "@types/object-hash": "^0.5.28",
     "bluebird": "^2.9.27",
     "lodash": "^4.0.0",
     "object-hash": "^1.1.0",
@@ -28,7 +32,10 @@
   "peerDependencies": {
     "electron": "^1.4.4",
     "bluebird": "^2.9.27",
-    "electron": "~1.4.3",
+    "@types/bluebird": "^3.0.35",
+    "@types/lodash": "^4.14.37",
+    "@types/node-uuid": "0.0.28",
+    "@types/object-hash": "^0.5.28",
     "lodash": "^4.0.0",
     "node-uuid": "~1.4.3",
     "object-hash": "^1.1.0"
@@ -40,6 +47,10 @@
     "node-uuid": "~1.4.3",
     "object-hash": "^1.1.0",
     "@types/uuid": "^2.0.29",
+    "@types/bluebird": "^3.0.35",
+    "@types/lodash": "^4.14.37",
+    "@types/node-uuid": "0.0.28",
+    "@types/object-hash": "^0.5.28",
     "chai": "^3.5.0",
     "concurrently": "^2.2.0",
     "gulp": "^3.9.1",
