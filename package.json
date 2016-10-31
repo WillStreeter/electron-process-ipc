@@ -52,6 +52,7 @@
     "test": "node_modules/.bin/gulp test",
     "dev": "node_modules/.bin/gulp dev",
     "start": "node .bin/server.js",
-    "build": "node_modules/.bin/gulp build"
+    "build": "rm -rf dist && tsc",
+    "prepublish": "typings install && npm run build"
   }
 }

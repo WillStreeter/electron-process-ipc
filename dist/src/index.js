@@ -11,5 +11,4 @@ var ElectronProcessIPC = (function () {
     return ElectronProcessIPC;
 }());
 exports.ElectronProcessIPC = ElectronProcessIPC;
-
 //# sourceMappingURL=index.js.map

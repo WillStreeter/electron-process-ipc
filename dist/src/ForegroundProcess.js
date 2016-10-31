@@ -75,5 +75,4 @@ var ForegroundProcess = (function () {
     return ForegroundProcess;
 }());
 exports.ForegroundProcess = ForegroundProcess;
-
 //# sourceMappingURL=ForegroundProcess.js.map
