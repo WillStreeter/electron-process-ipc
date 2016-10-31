@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "A typescript module using  smith-kyle's 'electron-process' node module",
   "main": "dist/src/index.js",
-  "typings": "dist/typings/index.d.ts",
+  "typings": "dist/typings/src/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -23,6 +23,9 @@
     "lodash": "^4.0.0",
     "object-hash": "^1.1.0",
     "uuid": "^2.0.1"
+  },
+  "peerDependencies": {
+    "electron": "^1.4.4"
   },
   "devDependencies": {
     "@types/uuid": "^2.0.29",
