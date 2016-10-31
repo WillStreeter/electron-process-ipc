@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "A typescript module using  smith-kyle's 'electron-process' node module",
   "main": "dist/src/index.js",
+  "typings": "typings.d.ts",
+  "typescript": {
+    "definition": "electron-process-ipc.d.ts"
+  },
   "directories": {
     "test": "test"
   },
