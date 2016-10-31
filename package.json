@@ -19,11 +19,11 @@
   "author": "will.streeter@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.4.6",
+    "bluebird": "^2.9.27",
     "lodash": "^4.0.0",
     "object-hash": "^1.1.0",
-    "node-uuid": "^2.0.1",
-    "electron": "1.4.3"
+    "node-uuid": "~1.4.3",
+    "electron": "~1.4.3"
   },
   "peerDependencies": {
     "electron": "^1.4.4"
