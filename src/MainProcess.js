@@ -36,4 +36,3 @@ var MainProcess = (function () {
     return MainProcess;
 }());
 exports.MainProcess = MainProcess;
-//# sourceMappingURL=MainProcess.js.map

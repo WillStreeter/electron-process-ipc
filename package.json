@@ -1,6 +1,6 @@
 {
   "name": "electron-process-ipc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A typescript module using  smith-kyle's 'electron-process' node module",
   "main": "dist/src/index.js",
   "typings": "typings.d.ts",
@@ -21,7 +21,26 @@
   ],
   "author": "will.streeter@gmail.com",
   "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.27",
+    "lodash": "^4.0.0",
+    "object-hash": "^1.1.0",
+    "node-uuid": "~1.4.3",
+    "electron": "~1.4.3"
+  },
+  "peerDependencies": {
+    "bluebird": "^2.9.27",
+    "electron": "~1.4.3",
+    "lodash": "^4.0.0",
+    "node-uuid": "~1.4.3",
+    "object-hash": "^1.1.0"
+  },
   "devDependencies": {
+    "bluebird": "^2.9.27",
+    "electron": "~1.4.3",
+    "lodash": "^4.0.0",
+    "node-uuid": "~1.4.3",
+    "object-hash": "^1.1.0",
     "@types/uuid": "^2.0.29",
     "chai": "^3.5.0",
     "concurrently": "^2.2.0",
@@ -46,6 +65,7 @@
     "test": "node_modules/.bin/gulp test",
     "dev": "node_modules/.bin/gulp dev",
     "start": "node .bin/server.js",
-    "build": "node_modules/.bin/gulp build"
+    "build": "rm -rf dist && tsc",
+    "prepublish": "typings install && npm run build"
   }
 }

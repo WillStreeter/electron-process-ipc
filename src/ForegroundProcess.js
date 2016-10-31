@@ -14,6 +14,7 @@ var ForegroundProcess = (function () {
         _.forEach(originalModule, function (func, funcName) {
             if (_.isFunction(func)) {
                 promiseWrappedModule[funcName] = function () {
+                    // Remove non-enumarable properties of arguments
                     var args = _.map(arguments, function (element) { return element; });
                     return _ref.run(moduleHash, funcName, args);
                 };
@@ -66,6 +67,8 @@ var ForegroundProcess = (function () {
         };
         return new Promise(function (resolve, reject) {
             if (_.some(args, _.isFunction)) {
+                // When a callback is executed in the background process it sends an
+                // IPC event named 'CALLBACK'.
                 electron_1.ipcRenderer.on('CALLBACK', _this.callbackCallback.bind(_this, functionsById));
             }
             electron_1.ipcRenderer.on('BACKGROUND_REPLY', _this.taskCompleteCallback.bind(_this, eventKey, resolve, reject));
@@ -75,4 +78,3 @@ var ForegroundProcess = (function () {
     return ForegroundProcess;
 }());
 exports.ForegroundProcess = ForegroundProcess;
-//# sourceMappingURL=ForegroundProcess.js.map

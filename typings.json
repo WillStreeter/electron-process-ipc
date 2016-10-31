@@ -1,12 +1,11 @@
 {
   "globalDependencies": {
     "chai": "registry:dt/chai#3.4.0+20160601211834",
-    "github-electron": "registry:dt/github-electron#0.37.6+20160417155838",
-    "express": "registry:dt/express#4.0.0+20160708185218",
+    "electron/github-electron": "registry:dt/electron/github-electron#1.4.3+20161013090743",
     "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160711183608",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "mocha": "registry:dt/mocha#2.2.5+20160619032855",
-    "node": "registry:dt/node#6.0.0+20160709114037",
+    "node": "registry:dt/node#6.0.0+20161019125345",
     "object-hash": "registry:dt/object-hash#0.5.0+20160317120654",
     "seneca": "registry:dt/seneca#2.1.0+20160619034151",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",

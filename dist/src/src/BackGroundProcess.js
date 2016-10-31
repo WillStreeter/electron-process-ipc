@@ -50,4 +50,5 @@ var BackGroundProcess = (function () {
     return BackGroundProcess;
 }());
 exports.BackGroundProcess = BackGroundProcess;
+
 //# sourceMappingURL=BackGroundProcess.js.map
