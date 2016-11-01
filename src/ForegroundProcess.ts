@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 import { ipcRenderer } from "electron";
 import * as uuid from 'node-uuid';
-import objectHash = require("object-hash");
+import hashids = require("hashids");
 import Promise = require("bluebird");
 
 
@@ -15,7 +15,7 @@ export class ForegroundProcess{
     getModule(originalModule:any):any{
 
         const promiseWrappedModule:any = {};
-        const moduleHash:any  = objectHash(originalModule);
+        const moduleHash:any  = hashids.encode(originalModule);
         const _ref:any = this;
         _.forEach(originalModule, (func, funcName) => {
           if (_.isFunction(func)) {

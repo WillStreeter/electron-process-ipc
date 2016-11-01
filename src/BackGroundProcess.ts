@@ -1,9 +1,7 @@
 import * as _ from "lodash";
 import { ipcRenderer } from "electron";
-import objectHash = require("object-hash");
+import hashids = require("hashids");
 import Promise = require("bluebird");
-
-
 
 
 export class  BackGroundProcess {
@@ -72,7 +70,7 @@ export class  BackGroundProcess {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        this.backgroundTasks[objectHash(backgroundModule)] = backgroundModule;
+        this.backgroundTasks[hashids.encode(backgroundModule)] = backgroundModule;
      }
 
 }

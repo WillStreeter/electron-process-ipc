@@ -1,6 +1,7 @@
 /// <reference path="globals/chai/index.d.ts" />
 /// <reference path="globals/electron/github-electron/index.d.ts" />
 /// <reference path="globals/express-serve-static-core/index.d.ts" />
+/// <reference path="globals/hashids/index.d.ts" />
 /// <reference path="globals/mime/index.d.ts" />
 /// <reference path="globals/mocha/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />

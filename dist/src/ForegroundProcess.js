@@ -2,14 +2,14 @@
 var _ = require("lodash");
 var electron_1 = require("electron");
 var uuid = require('node-uuid');
-var objectHash = require("object-hash");
+var hashids = require("hashids");
 var Promise = require("bluebird");
 var ForegroundProcess = (function () {
     function ForegroundProcess() {
     }
     ForegroundProcess.prototype.getModule = function (originalModule) {
         var promiseWrappedModule = {};
-        var moduleHash = objectHash(originalModule);
+        var moduleHash = hashids.encode(originalModule);
         var _ref = this;
         _.forEach(originalModule, function (func, funcName) {
             if (_.isFunction(func)) {

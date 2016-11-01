@@ -1,7 +1,7 @@
 "use strict";
 var _ = require("lodash");
 var electron_1 = require("electron");
-var objectHash = require("object-hash");
+var hashids = require("hashids");
 var Promise = require("bluebird");
 var BackGroundProcess = (function () {
     function BackGroundProcess() {
@@ -45,7 +45,7 @@ var BackGroundProcess = (function () {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        this.backgroundTasks[objectHash(backgroundModule)] = backgroundModule;
+        this.backgroundTasks[hashids.encode(backgroundModule)] = backgroundModule;
     };
     return BackGroundProcess;
 }());
