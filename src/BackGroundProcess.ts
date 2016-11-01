@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import { ipcRenderer } from "electron";
-import hashids = require("hashids");
+const {  Hashids } = require("hashids");
 import Promise = require("bluebird");
 
 
@@ -70,7 +70,9 @@ export class  BackGroundProcess {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        this.backgroundTasks[hashids.encode(backgroundModule)] = backgroundModule;
+        const hashIds  =  new Hashids('cpuIntensive')
+        var moduleHash =  hashIds.encode(1,2,3);
+        this.backgroundTasks[moduleHash] = backgroundModule;
      }
 
 }

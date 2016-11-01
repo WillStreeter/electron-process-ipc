@@ -1,5 +1,5 @@
 import * as _ from "lodash";
-import {BrowserWindow, ipcMain} from "electron";
+const {BrowserWindow, ipcMain} = require('electron');
 
 var foregroundWindows:any = [];
 
@@ -9,6 +9,8 @@ export class MainProcess{
 
     public backgroundProcessHandler:any;
 
+
+
     constructor(){
         this.backgroundProcessHandler = {
             addWindow(browserWindow) {
@@ -16,6 +18,10 @@ export class MainProcess{
             }
         }
     }
+
+     getBackgroundWindow(){
+         return this.backgroundWindow;
+     }
 
     createBackgroundProcess(url:string, debug:any) {
         this.backgroundWindow = new BrowserWindow();

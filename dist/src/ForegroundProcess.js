@@ -1,15 +1,16 @@
 "use strict";
 var _ = require("lodash");
-var electron_1 = require("electron");
+var ipcRenderer = require("electron").ipcRenderer;
 var uuid = require('node-uuid');
-var hashids = require("hashids");
+var Hashids = require("hashids").Hashids;
 var Promise = require("bluebird");
 var ForegroundProcess = (function () {
     function ForegroundProcess() {
     }
     ForegroundProcess.prototype.getModule = function (originalModule) {
         var promiseWrappedModule = {};
-        var moduleHash = hashids.encode(originalModule);
+        var hashids = Hashids('mycpuntensive');
+        var moduleHash = hashids.encode(1, 2, 3);
         var _ref = this;
         _.forEach(originalModule, function (func, funcName) {
             if (_.isFunction(func)) {
@@ -26,11 +27,11 @@ var ForegroundProcess = (function () {
         if (replyEventKey === eventKey) {
             switch (resultType) {
                 case 'BACKGROUND_RESOLVE':
-                    electron_1.ipcRenderer.removeListener('BACKGROUND_REPLY', this.taskCompleteCallback);
+                    ipcRenderer.removeListener('BACKGROUND_REPLY', this.taskCompleteCallback);
                     resolve(result);
                     break;
                 case 'BACKGROUND_REJECT':
-                    electron_1.ipcRenderer.removeListener('BACKGROUND_REPLY', this.taskCompleteCallback);
+                    ipcRenderer.removeListener('BACKGROUND_REPLY', this.taskCompleteCallback);
                     reject(reason);
                     break;
                 default:
@@ -66,13 +67,14 @@ var ForegroundProcess = (function () {
         };
         return new Promise(function (resolve, reject) {
             if (_.some(args, _.isFunction)) {
-                electron_1.ipcRenderer.on('CALLBACK', _this.callbackCallback.bind(_this, functionsById));
+                ipcRenderer.on('CALLBACK', _this.callbackCallback.bind(_this, functionsById));
             }
-            electron_1.ipcRenderer.on('BACKGROUND_REPLY', _this.taskCompleteCallback.bind(_this, eventKey, resolve, reject));
-            electron_1.ipcRenderer.send('BACKGROUND_START', payload);
+            ipcRenderer.on('BACKGROUND_REPLY', _this.taskCompleteCallback.bind(_this, eventKey, resolve, reject));
+            ipcRenderer.send('BACKGROUND_START', payload);
         });
     };
     return ForegroundProcess;
 }());
 exports.ForegroundProcess = ForegroundProcess;
+
 //# sourceMappingURL=ForegroundProcess.js.map

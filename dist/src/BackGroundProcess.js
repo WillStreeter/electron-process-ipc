@@ -1,7 +1,7 @@
 "use strict";
 var _ = require("lodash");
 var electron_1 = require("electron");
-var hashids = require("hashids");
+var Hashids = require("hashids").Hashids;
 var Promise = require("bluebird");
 var BackGroundProcess = (function () {
     function BackGroundProcess() {
@@ -45,9 +45,12 @@ var BackGroundProcess = (function () {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        this.backgroundTasks[hashids.encode(backgroundModule)] = backgroundModule;
+        var hashIds = new Hashids('cpuIntensive');
+        var moduleHash = hashIds.encode(1, 2, 3);
+        this.backgroundTasks[moduleHash] = backgroundModule;
     };
     return BackGroundProcess;
 }());
 exports.BackGroundProcess = BackGroundProcess;
+
 //# sourceMappingURL=BackGroundProcess.js.map

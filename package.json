@@ -1,12 +1,9 @@
 {
   "name": "electron-process-ipc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A typescript module using  smith-kyle's 'electron-process' node module",
   "main": "dist/src/index.js",
-  "typings": "typings.d.ts",
-  "typescript": {
-    "definition": "electron-process-ipc.d.ts"
-  },
+  "typings": "dist/typings/src/index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -73,7 +70,7 @@
     "test": "node_modules/.bin/gulp test",
     "dev": "node_modules/.bin/gulp dev",
     "start": "node .bin/server.js",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist/src && tsc",
     "prepublish": "typings install && npm run build"
   }
 }

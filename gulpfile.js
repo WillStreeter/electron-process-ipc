@@ -19,7 +19,7 @@ var tsTestProject = ts.createProject('tsconfig.json', {
 let node;
 
 gulp.task('clean',()=>
-  gulp.src('dist/**/*.*', {read: false})
+  gulp.src('./dist/**/*.*', {read: false})
       .pipe(clean())
 );
 
@@ -29,8 +29,8 @@ gulp.task('build:ts',()=> {
       .pipe(ts(tsSrcProject));
 
   return merge([
-          tsResult.js.pipe(sourcemaps.write('.', {sourceRoot: './src'}))
-          .pipe(gulp.dest('./dist/src')),
+          tsResult.js.pipe(sourcemaps.write('.', {sourceRoot: './'}))
+          .pipe(gulp.dest('./dist')),
           tsResult.dts.pipe(gulp.dest('./dist/typings'))
         ]);
 });

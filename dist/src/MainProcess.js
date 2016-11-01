@@ -1,6 +1,6 @@
 "use strict";
 var _ = require("lodash");
-var electron_1 = require("electron");
+var _a = require('electron'), BrowserWindow = _a.BrowserWindow, ipcMain = _a.ipcMain;
 var foregroundWindows = [];
 var MainProcess = (function () {
     function MainProcess() {
@@ -10,20 +10,23 @@ var MainProcess = (function () {
             }
         };
     }
+    MainProcess.prototype.getBackgroundWindow = function () {
+        return this.backgroundWindow;
+    };
     MainProcess.prototype.createBackgroundProcess = function (url, debug) {
         var _this = this;
-        this.backgroundWindow = new electron_1.BrowserWindow();
+        this.backgroundWindow = new BrowserWindow();
         if (!debug) {
             this.backgroundWindow.hide();
         }
         this.backgroundWindow.loadURL(url);
-        electron_1.ipcMain.on('BACKGROUND_START', function (event, result) {
+        ipcMain.on('BACKGROUND_START', function (event, result) {
             _this.backgroundWindow.webContents.send.apply(_this.backgroundWindow.webContents, ['BACKGROUND_START', result]);
         });
-        electron_1.ipcMain.on('BACKGROUND_REPLY', function (event, result) {
+        ipcMain.on('BACKGROUND_REPLY', function (event, result) {
             _this.sendToAllForegroundWindows('BACKGROUND_REPLY', result);
         });
-        electron_1.ipcMain.on('CALLBACK', function (event, payload) {
+        ipcMain.on('CALLBACK', function (event, payload) {
             _this.sendToAllForegroundWindows('CALLBACK', payload);
         });
         return this.backgroundProcessHandler;
@@ -36,4 +39,5 @@ var MainProcess = (function () {
     return MainProcess;
 }());
 exports.MainProcess = MainProcess;
+
 //# sourceMappingURL=MainProcess.js.map
