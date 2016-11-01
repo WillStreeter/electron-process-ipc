@@ -7,7 +7,6 @@
     "mime": "registry:dt/mime#0.0.0+20160316155526",
     "mocha": "registry:dt/mocha#2.2.5+20160619032855",
     "node": "registry:dt/node#6.0.0+20161019125345",
-    "object-hash": "registry:dt/object-hash#0.5.0+20160317120654",
     "seneca": "registry:dt/seneca#2.1.0+20160619034151",
     "serve-static": "registry:dt/serve-static#0.0.0+20160606155157",
     "superagent": "registry:dt/superagent#1.4.0+20160317120654",
