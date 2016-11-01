@@ -9,7 +9,7 @@ var ForegroundProcess = (function () {
     }
     ForegroundProcess.prototype.getModule = function (originalModule) {
         var promiseWrappedModule = {};
-        var hashids = Hashids('mycpuntensive');
+        var hashids = new Hashids('mycpuntensive');
         var moduleHash = hashids.encode(1, 2, 3);
         var _ref = this;
         _.forEach(originalModule, function (func, funcName) {

@@ -15,7 +15,7 @@ export class ForegroundProcess{
     getModule(originalModule:any):any{
 
         const promiseWrappedModule:any = {};
-        const hashids = Hashids('mycpuntensive')
+        const hashids = new Hashids('mycpuntensive')
         const moduleHash:any  = hashids.encode(1, 2, 3);
         const _ref:any = this;
         _.forEach(originalModule, (func, funcName) => {
