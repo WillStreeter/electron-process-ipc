@@ -1,8 +1,8 @@
 
 
 # electron-process-ipc
-I was unable to use smith-kyle's electron-process in my application due to use of the npm module object-hash, as it depends
-on nodejs's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash requirements with hashids npm.
+I was unable to use [smith-kyle's electron-process](https://www.npmjs.com/package/electron-process) in my application due to use of the [npm module object-hash](https://www.npmjs.com/package/object-hash), as it depends
+on nodejs's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash requirements with [hashids npm](https://www.npmjs.com/package/hashids).
 
 While I have hard coded Hashids seed with HashIds('my intensive work'), it seems easy enough. to have loaded module stringify the object in the future, so that
 a mulitude of different objects could be used. Since my current needs only involve one object, I did not implement it with this in mind. Should be easy to update in the future.
