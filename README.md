@@ -4,10 +4,10 @@
 I was unable to use [smith-kyle's electron-process](https://www.npmjs.com/package/electron-process) in my application due to use of the [npm module object-hash](https://www.npmjs.com/package/object-hash), as it depends
 on nodejs's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash requirements with [hashids npm](https://www.npmjs.com/package/hashids).
 
-While I have hard coded Hashids seed with HashIds('my intensive work'), it seems easy enough to stringify an object in the future, so that
-account for correctly identifying various objects/modules. Since my current needs only involve one object/module, I did not go the extra step for a variants. Should be easy to update in the future.
+While I have hard coded Hashids seed with HashIds('my intensive work'), it seems easy enough to stringify an object in the future, to
+account for using and correctly identifying various objects/modules. Since my current needs only involve one object/module, I did not go the extra step and enable multiple object/mdoules. Should be easy to update in the future.
 
-Although I refactored smith-kyle's javascript files using typescript, I made sure it compiles back to javascript so that it correctly loades with .require(). (in otherwords: I am not making use of the
+Although I refactored Kyle Smith's javascript files using typescript, I made sure it compiles back to javascript so that it correctly loades with .require(). (in otherwords: I am not making use of the
 .d.ts file  that are created!)
 
 
