@@ -1,4 +1,75 @@
-### WIP
+
 
 # electron-process-ipc
 This project is an attempt to convert smith-kyle's electron-process to npm module for use with typescript.
+
+
+
+## setting electron's main.js  angular2 advanced sees main.desktop.
+
+
+```
+    var electron = require('electron');
+    var epIPC = require('electron-process-ipc');
+    var electronProcessIPC = new epIPC.ElectronProcessIPC();
+    var main = electronProcessIPC.main;
+
+    ...
+
+    var backgroundURL = 'file://' + __dirname + '/background.html';
+    var backgroundProcessHandler = main.createBackgroundProcess(backgroundURL, false);
+    mainWindow = new BrowserWindow({ width: 1200, height: 920 });
+    var bgWin = main.getBackgroundWindow();
+    backgroundProcessHandler.addWindow(mainWindow);
+    mainWindow.loadURL('file://' + __dirname + '/index.desktop.html');
+
+```
+
+## setting up background.html to do some intensive work  angular2 advanced sees main.desktop.
+
+
+```
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <script>
+          const epIPC = require('electron-process-ipc');
+          const electronProcessIPC = new epIPC.ElectronProcessIPC();
+          const background = electronProcessIPC.background;
+          background.registerModule(require('./app/ngrx-redux/services/record-webrtc-services/cpuIntensive'));
+        </script>
+      </head>
+      <body>
+        <h1>Background window</h1>
+      </body>
+    </html>
+
+```
+
+
+## receiving some call back information in an Angular 2 services.
+
+```
+
+    import { Injectable } from '@angular/core';
+    import * as electronProcessIPC from 'electron-process-ipc';
+
+    @Injectable()
+    export class WorkerBridgeService {
+      cpuIntensive:any;
+      electronProcessIPC:any;
+
+      constructor() {
+             this.electronProcessIPC = new electronProcessIPC['ElectronProcessIPC']();
+             this.cpuIntensive = this.electronProcessIPC.foreground.getModule(require('./intensive/cpuIntensive'));
+      }
+
+      beginWork():void{
+             this.cpuIntensive.doCallbackStuff((response)=>{
+                 console.log('[WorkerBridgeService]---- response =', response);
+               }).then((result)=>{ console.log('[WorkerBridgeService]---- reject =', result)})
+                 .catch((reason)=>{ console.log('[WorkerBridgeService]---- reason =', reason)});
+      }
+
+    }
+```
