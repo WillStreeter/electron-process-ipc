@@ -70,8 +70,8 @@ export class  BackGroundProcess {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        const hashIds  =  new Hashids('cpuIntensive')
-        var moduleHash =  hashIds.encode(1,2,3);
+        var hashIds  =  new Hashids('my cpu intensive');
+        var moduleHash =  hashIds.encode([1,2,3]);
         this.backgroundTasks[moduleHash] = backgroundModule;
      }
 

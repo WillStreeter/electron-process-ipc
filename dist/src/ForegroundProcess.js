@@ -9,8 +9,8 @@ var ForegroundProcess = (function () {
     }
     ForegroundProcess.prototype.getModule = function (originalModule) {
         var promiseWrappedModule = {};
-        var hashids = new Hashids('mycpuntensive');
-        var moduleHash = hashids.encode(1, 2, 3);
+        var hashIds = new Hashids('my cpu intensive');
+        var moduleHash = hashIds.encode([1, 2, 3]);
         var _ref = this;
         _.forEach(originalModule, function (func, funcName) {
             if (_.isFunction(func)) {

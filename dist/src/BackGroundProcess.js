@@ -45,8 +45,8 @@ var BackGroundProcess = (function () {
             this.registerListeners();
             this.hasRegisteredListeners = true;
         }
-        var hashIds = new Hashids('cpuIntensive');
-        var moduleHash = hashIds.encode(1, 2, 3);
+        var hashIds = new Hashids('my cpu intensive');
+        var moduleHash = hashIds.encode([1, 2, 3]);
         this.backgroundTasks[moduleHash] = backgroundModule;
     };
     return BackGroundProcess;
