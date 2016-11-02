@@ -1,9 +1,11 @@
 
 
 # electron-process-ipc
-I was unable to use smith-kyle's electron-process in my application, so I modified it. I wrote the class and typescript,
-and compiled it back to javascript, loading it with require in my project.  Eventually, after creating test, and an example
-app, I will demontrate with in a project!
+I was unable to use smith-kyle's electron-process in my application, so I modified it.  I was unable to use the module object-hash, because it depends
+on node's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash with hashids moudel. Since, I will always reference same module,
+I did not update the implementation of hashids, so that it can account for the variance as is done with smith-kyble's object-hash. Should be easy to update in the future. I re-wrote the classes using typescript,
+but made sure it compiles back to javascript so that it will load correctly in current project.  Eventually, it would be nice to convert it into
+npm with @types in DefinitelyTyped, pointing to javascirpt implementation, but it was it is right now.
 
 
 
