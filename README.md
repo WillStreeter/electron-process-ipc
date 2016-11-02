@@ -1,11 +1,13 @@
 
 
 # electron-process-ipc
-This project is an attempt to convert smith-kyle's electron-process to npm module for use with typescript.
+I was unable to use smith-kyle's electron-process in my application, so I modified it. I wrote the class and typescript,
+and compiled it back to javascript, loading it with require in my project.  Eventually, after creating test, and an example
+app, I will demontrate with in a project!
 
 
 
-## setting electron's main.js  angular2 advanced sees main.desktop.
+## setting electron's main.js  (advanced seed: main.desktop.ts)
 
 
 ```
@@ -25,7 +27,7 @@ This project is an attempt to convert smith-kyle's electron-process to npm modul
 
 ```
 
-## setting up background.html to do some intensive work  angular2 advanced sees main.desktop.
+## setting up background.html to load  some work
 
 
 ```
