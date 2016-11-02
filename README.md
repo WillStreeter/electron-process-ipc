@@ -1,11 +1,16 @@
 
 
 # electron-process-ipc
-I was unable to use smith-kyle's electron-process in my application, so I modified it.  I was unable to use the module object-hash, because it depends
-on node's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash with hashids moudel. Since, I will always reference same module,
-I did not update the implementation of hashids, so that it can account for the variance as is done with smith-kyble's object-hash. Should be easy to update in the future. I re-wrote the classes using typescript,
-but made sure it compiles back to javascript so that it will load correctly in current project.  Eventually, it would be nice to convert it into
-npm with @types in DefinitelyTyped, pointing to javascirpt implementation, but it was it is right now.
+I was unable to use smith-kyle's electron-process in my application due to use of the npm module object-hash, as it depends
+on nodejs's crypto, which I was unable to reference correctly from my electron angular2 code. I replaced the object-hash requirements with hashids npm.
+
+While I have hard coded Hashids seed with HashIds('my intensive work'), it seems easy enough. to have loaded module stringify the object in the future, so that
+a mulitude of different objects could be used. Since my current needs only involve one object, I did not implement it with this in mind. Should be easy to update in the future.
+I refactorsmith-kyle's electron-process javascript files using typescript, but made sure it compiles back to javascript so that it will load correctly in my current project.
+
+
+### ToDo #
+Eventually, it would be nice to convert it into npm with @types, with DefinitelyTyped listing, pointing to javascirpt implementation.
 
 
 
