@@ -1,7 +1,7 @@
 "use strict";
 var _ = require("lodash");
 var electron_1 = require("electron");
-var Hashids = require("hashids").Hashids;
+var Hashids = require("hashids");
 var Promise = require("bluebird");
 var BackGroundProcess = (function () {
     function BackGroundProcess() {

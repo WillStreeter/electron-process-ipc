@@ -1,7 +1,7 @@
 import * as _ from "lodash";
 const { ipcRenderer } =  require("electron");
 import * as uuid from 'node-uuid';
-const {  Hashids } = require("hashids");
+import  Hashids  = require("hashids");
 import Promise = require("bluebird");
 
 

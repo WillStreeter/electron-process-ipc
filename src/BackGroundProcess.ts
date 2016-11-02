@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import { ipcRenderer } from "electron";
-const {  Hashids } = require("hashids");
+import Hashids = require("hashids");
 import Promise = require("bluebird");
 
 

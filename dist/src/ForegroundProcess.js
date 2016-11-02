@@ -2,7 +2,7 @@
 var _ = require("lodash");
 var ipcRenderer = require("electron").ipcRenderer;
 var uuid = require('node-uuid');
-var Hashids = require("hashids").Hashids;
+var Hashids = require("hashids");
 var Promise = require("bluebird");
 var ForegroundProcess = (function () {
     function ForegroundProcess() {
